@@ -1,2 +1,3 @@
 #! /bin/bash
-docker run -itv ./:/test test:v1.0
+PWD=`pwd`
+docker run -itv $PWD:/test test:v1.0
