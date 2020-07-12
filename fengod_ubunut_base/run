@@ -1,0 +1,13 @@
+#! /bin/bash
+
+# [Config]
+function build() {
+    docker build -t fengod_ubuntu_base:20.04 ${PWD}/Docker/ --rm
+}
+
+function example() {
+    docker run -itd -v ${PWD}/Share:/Share -v /dev:/dev -p 17211:22 --name fengod_sandbox fengod_ubuntu_base:20.04
+}
+
+# [Shell]
+build
